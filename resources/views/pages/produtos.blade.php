@@ -128,7 +128,7 @@
 
     $(document).ready(function () {
         
-        $("#valor").maskMoney({prefix:'R$ ', allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
+        $("#valor").maskMoney({prefix:'R$ ', allowNegative: true,  decimal:'.', affixesStay: false});
         $("#bcd").mask("0000000000000");
         $('#produtos').DataTable();
 

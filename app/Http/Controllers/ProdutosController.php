@@ -29,12 +29,12 @@ class ProdutosController extends Controller
     {
         if(is_null($request->idproduto)){
             $produtos = DB::insert(
-                DB::raw("insert into produtos (nomeProduto, valor, codigoBarras) values ('" . $request->nomeproduto . "', '$request->valor', '" . $request->codigoBarras . "')")
+                DB::raw("insert into produtos (nomeProduto, valor, codigoBarras) values ('" . $request->nomeproduto . "', '" . str_replace(",", "", $request->valor) . "', '" . $request->codigoBarras . "')")
             );
 
         } else {
             $produtos = DB::update(
-                DB::raw("update produtos set nomeProduto = '" . $request->nomeproduto . "', valor = '$request->valor', codigoBarras = '" . $request->codigoBarras . "' where id = $request->idproduto")
+                DB::raw("update produtos set nomeProduto = '" . $request->nomeproduto . "', valor = '" . str_replace(",", "", $request->valor) . "', codigoBarras = '" . $request->codigoBarras . "' where id = $request->idproduto")
             );
         }
 

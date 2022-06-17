@@ -28,4 +28,3 @@ Route::get('/pedidos', 'App\Http\Controllers\PedidosItensController@APIPedidos')
 Route::get('/pedidos/{id?}', 'App\Http\Controllers\PedidosItensController@APIPedidos');
 Route::get('/pedidosItens/{id?}', 'App\Http\Controllers\PedidosItensController@APIPedidosItens');
 
-
